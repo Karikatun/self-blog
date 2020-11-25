@@ -1,6 +1,12 @@
 import * as React from 'react';
-import {MainNavigation} from './src/navigation/AppNavigation';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {BottomNavigation} from './src/navigation/AppNavigation';
 
 export default function App() {
-  return <MainNavigation />;
+  return (
+    <NavigationContainer>
+      <BottomNavigation />
+    </NavigationContainer>
+  );
 }
