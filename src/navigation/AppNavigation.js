@@ -12,6 +12,7 @@ import {PostScreen} from '../screens/PostScreen';
 import {AboutScreen} from '../screens/AboutScreen';
 import {CreatePostScreen} from '../screens/CreatePostScreen';
 import {THEME} from '../theme';
+import reactotron from 'reactotron-react-native';
 
 const Stack = createStackNavigator();
 const BottomTab =
@@ -135,7 +136,8 @@ const CreateNavigation = ({navigation}) => {
 };
 
 // Нижние табы на главной странице
-export const BottomNavigation = () => {
+export const BottomNavigation = ({store}) => {
+  reactotron.log(store)
   return (
     <BottomTab.Navigator {...getNavigationOptions()}>
       <BottomTab.Screen
@@ -159,7 +161,7 @@ export const BottomNavigation = () => {
   );
 };
 
-export const DrawerNavigation = () => {
+export const DrawerNavigation = ({store}) => {
   return (
     <Drawer.Navigator
       drawerType="back"
